@@ -1,0 +1,34 @@
+services:
+  - type: web
+    name: vigility-backend
+    runtime: node
+    rootDir: backend
+    buildCommand: npm install
+    startCommand: node index.js
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        generateValue: false
+      - key: DB_NAME
+        sync: false
+      - key: DB_USER
+        sync: false
+      - key: DB_PASS
+        sync: false
+      - key: DB_HOST
+        sync: false
+      - key: DB_DIALECT
+        value: postgres
+      - key: DB_PORT
+        value: "5432"
+      - key: JWT_SECRET
+        generateValue: true
+      - key: CLIENT_URL
+        sync: false
+
+databases:
+  - name: vigility-db
+    databaseName: vigility_tracking_app
+    user: vigility_user
+    plan: free

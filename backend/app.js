@@ -10,7 +10,7 @@ app.use(express.json());
 
 app.use(
   cors({
-    origin: "http://localhost:5173",
+    origin: process.env.CLIENT_URL || "http://localhost:5173",
     methods: ["GET", "POST", "PUT", "DELETE"],
     allowedHeaders: ["Content-Type", "Authorization"],
   })
@@ -34,8 +34,9 @@ const startServer = async () => {
     await sequelize.sync();
     console.log(`Tables ready ✅ (PID: ${process.pid})`);
 
-    app.listen(3000, () => {
-      console.log(`Server running on port 3000 🚀 (PID: ${process.pid})`);
+    const PORT = process.env.PORT || 3000;
+    app.listen(PORT, () => {
+      console.log(`Server running on port ${PORT} 🚀 (PID: ${process.pid})`);
     });
   } catch (err) {
     console.log("DB Error ❌", err);
