@@ -1,0 +1,110 @@
+/* ═══════════════════════════════════════════
+   STAT CARDS — horizontal modern layout
+   ═══════════════════════════════════════════ */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 14px;
+}
+
+/* ── Card ────────────────────────────────── */
+.card {
+  background: #ffffff;
+  border: 1.5px solid #e4e9f2;
+  border-left: 4px solid var(--card-color, #4f46e5);
+  border-radius: 16px;
+  padding: 18px 20px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 16px;
+  animation: fadeUp 0.4s ease both;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+  cursor: default;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+}
+
+/* subtle color wash behind content */
+.card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, color-mix(in srgb, var(--card-color) 6%, transparent) 0%, transparent 60%);
+  pointer-events: none;
+  border-radius: inherit;
+}
+
+.card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 28px rgba(0,0,0,0.10);
+  border-color: color-mix(in srgb, var(--card-color) 60%, #e4e9f2);
+  border-left-color: var(--card-color);
+}
+
+/* ── Icon box ────────────────────────────── */
+.iconBox {
+  width: 48px;
+  height: 48px;
+  border-radius: 14px;
+  background: var(--card-color, #4f46e5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  box-shadow: 0 4px 12px color-mix(in srgb, var(--card-color) 35%, transparent);
+}
+
+/* ── Info ────────────────────────────────── */
+.info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+  flex: 1;
+}
+
+.label {
+  font-size: 10.5px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  color: #94a3b8;
+  font-family: var(--font-sans);
+  line-height: 1;
+}
+
+.value {
+  font-family: var(--font-sans);
+  font-weight: 800;
+  font-size: 22px;
+  color: #0f172a;
+  letter-spacing: -0.5px;
+  line-height: 1.25;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.truncate {
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0;
+  text-transform: capitalize;
+}
+
+/* ═══════════════════════════════════════════
+   RESPONSIVE
+   ═══════════════════════════════════════════ */
+@media (max-width: 1300px) { .grid { grid-template-columns: repeat(3, 1fr); } }
+@media (max-width: 900px)  { .grid { grid-template-columns: repeat(2, 1fr); gap: 12px; } }
+@media (max-width: 480px)  {
+  .grid    { grid-template-columns: 1fr 1fr; gap: 10px; }
+  .card    { padding: 14px 14px; gap: 12px; }
+  .iconBox { width: 40px; height: 40px; border-radius: 11px; }
+  .value   { font-size: 18px; }
+}
+@media (max-width: 360px)  {
+  .grid { grid-template-columns: 1fr; }
+}

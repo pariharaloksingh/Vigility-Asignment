@@ -1,0 +1,169 @@
+/* ═══════════════════════════════════════════
+   CHART CARDS — responsive
+   ═══════════════════════════════════════════ */
+.chartCard {
+  background: #ffffff;
+  border: 1.5px solid #e4e9f2;
+  border-radius: 14px;
+  padding: 22px 24px 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  animation: fadeUp 0.4s ease both;
+  transition: border-color var(--transition), box-shadow var(--transition);
+  box-shadow: var(--shadow);
+  min-height: 0;
+}
+
+.chartCard:hover {
+  border-color: #c7d2fe;
+  box-shadow: 0 4px 20px rgba(79,70,229,0.07);
+}
+
+/* ── Header ──────────────────────────────── */
+.chartHeader {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.chartTitle {
+  font-family: var(--font-sans);
+  font-weight: 800;
+  font-size: 16px;
+  color: #0f172a;
+  letter-spacing: -0.2px;
+}
+
+.chartHint {
+  font-size: 11.5px;
+  color: #94a3b8;
+  font-family: var(--font-mono);
+  margin-bottom: 8px;
+  margin-top: 2px;
+}
+
+/* ── Badge ───────────────────────────────── */
+.badge {
+  background: rgba(79,70,229,0.08);
+  border: 1.5px solid rgba(79,70,229,0.18);
+  color: #4f46e5;
+  font-size: 11px;
+  font-family: var(--font-mono);
+  font-weight: 500;
+  padding: 3px 10px;
+  border-radius: 99px;
+  letter-spacing: 0.2px;
+}
+
+/* ── Empty state ─────────────────────────── */
+.empty {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  height: 220px;
+  color: #94a3b8;
+  font-family: var(--font-sans);
+  font-size: 13.5px;
+  font-weight: 500;
+  text-align: center;
+  flex-direction: column;
+  background: #fafbff;
+  border-radius: 10px;
+  border: 1.5px dashed #e4e9f2;
+  margin-top: 8px;
+}
+
+.emptyIcon {
+  width: 36px;
+  height: 36px;
+  background: rgba(79,70,229,0.08);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #4f46e5;
+  font-size: 18px;
+}
+
+/* ── Tooltip ─────────────────────────────── */
+.tooltip {
+  background: #ffffff;
+  border: 1.5px solid #e4e9f2;
+  border-radius: 10px;
+  padding: 10px 14px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.09);
+}
+
+.tooltipLabel {
+  font-size: 11px;
+  color: #64748b;
+  font-family: var(--font-mono);
+  margin-bottom: 3px;
+  font-weight: 500;
+}
+
+.tooltipValue {
+  font-size: 19px;
+  font-weight: 800;
+  color: #4f46e5;
+  font-family: var(--font-sans);
+  letter-spacing: -0.3px;
+}
+
+.tooltipValue span {
+  font-size: 12px;
+  color: #94a3b8;
+  font-weight: 400;
+  font-family: var(--font-mono);
+  margin-left: 4px;
+}
+
+.tooltipSub {
+  font-size: 10px;
+  color: #94a3b8;
+  font-family: var(--font-mono);
+  margin-top: 3px;
+}
+
+/* ── Loading state (FIX Bug #8) ─────────── */
+.loadingState {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  height: 220px;
+  color: #64748b;
+  font-size: 13px;
+  font-family: var(--font-sans);
+  font-weight: 500;
+  background: #fafbff;
+  border-radius: 10px;
+  border: 1.5px dashed #e4e9f2;
+  margin-top: 8px;
+}
+
+.chartSpinner {
+  width: 28px;
+  height: 28px;
+  border: 3px solid rgba(79, 70, 229, 0.15);
+  border-top-color: #4f46e5;
+  border-radius: 50%;
+  animation: spin 0.7s linear infinite;
+}
+
+/* ═══════════════════════════════════════════
+   RESPONSIVE
+   ═══════════════════════════════════════════ */
+@media (max-width: 640px) {
+  .chartCard  { padding: 16px 16px 14px; }
+  .chartTitle { font-size: 14px; }
+  .empty      { height: 180px; font-size: 12.5px; }
+}
+
+@media (max-width: 400px) {
+  .chartCard  { padding: 14px 12px 12px; }
+}

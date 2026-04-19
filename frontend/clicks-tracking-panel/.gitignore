@@ -1,0 +1,16 @@
+# dependencies
+node_modules
+
+# production
+build
+dist
+
+# env variables (keep .env.example)
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# logs
+npm-debug.log*
