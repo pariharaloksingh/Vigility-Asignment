@@ -39,6 +39,6 @@ services:
 
 databases:
   - name: vigility-db
-    databaseName: vigility_tracking_app
-    user: vigility_user
+    databaseName: my-app-db
+    user: alok
     plan: free
