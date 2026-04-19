@@ -1,8 +1,7 @@
 const cluster = require("cluster");
 const os = require("os");
 
-const numCPUs = os.cpus().length;
-console.log(`System has ${numCPUs} CPU cores\n`);
+const numCPUs = 2
 
 if (cluster.isPrimary) {
   console.log(`Master process ${process.pid} is running`);
