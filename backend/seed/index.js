@@ -8,8 +8,8 @@ const { User, FeatureClick } = require('../models');
 
 // ─── Config ──────────────────────────────────────────────────────────────────
 
-const TOTAL_USERS         = 20;
-const TOTAL_FEATURE_CLICKS = 200;
+const TOTAL_USERS         = 120;   // 20 original + 100 mor
+const TOTAL_FEATURE_CLICKS = 1200; // ~10 clicks per user
 const PLAIN_PASSWORD      = '123456';
 const BCRYPT_ROUNDS       = 10;
 

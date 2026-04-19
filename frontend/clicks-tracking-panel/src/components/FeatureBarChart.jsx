@@ -48,7 +48,7 @@ export default function FeatureBarChart({ data, selectedFeature, onSelectFeature
         <h3 className={styles.chartTitle}>Clicks by Feature</h3>
         <div className={styles.empty}>
           <div className={styles.emptyIcon}><BarChart3 size={18} /></div>
-          No data available
+          Noo data available
         </div>
       </div>
     )
